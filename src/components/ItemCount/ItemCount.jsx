@@ -17,10 +17,12 @@ const ItemCount = ({initial = 1, stock}) => {
           }
 
           return (
-                    <div>
-                              <h1>{count}</h1>
-                              <button onClick={decrement}> - </button>
-                              <button onClick={increment}> + </button>
+                    <div className="card d-inline-block">
+                              <div className="d-flex gap-2 align-items-center justify-content-center">
+                              <button onClick={decrement}> ➖ </button>
+                              <h1 className="h3">{count}</h1>
+                              <button onClick={increment}> ➕ </button>
+                              </div>
                     </div>
           );
 }

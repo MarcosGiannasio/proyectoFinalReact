@@ -3,8 +3,8 @@ import logo from '../../assets/cart.svg'
 const CartWidget = () => {
           return (
                     <div>
-                    <img src = {logo}/>
-                    5
+                    <img width="30" height="30" src  =  {logo}/>
+                    <strong>5</strong>
                     </div>
           )
 }
