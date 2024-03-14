@@ -26,7 +26,7 @@ const products = [
           price: 14000,
           category:"cocina",
           img:"https://acdn.mitiendanube.com/stores/001/095/862/products/copia-de-diseno-sin-titulo-461-ca38911d465212ed4716306904642989-1024-1024.webp",
-          stock:25,
+          stock: 25,
           description:"Las bandejas Meliquina son de cerámica, están hechas a mano de manera individual y artesanal, es por eso que podes encontrar pequeñas variaciones entre cada una.",
 },
 ]

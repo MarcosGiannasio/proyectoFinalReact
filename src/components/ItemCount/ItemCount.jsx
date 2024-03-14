@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ItemCount = ({initial = 1, stock,}) => {
+const ItemCount = ({ initial = 1, stock,}) => {
 
           const [count, setCount] = useState(initial)
 
@@ -20,7 +20,7 @@ const ItemCount = ({initial = 1, stock,}) => {
                     <div className="card d-inline-block">
                               <div className="d-flex gap-2 align-items-center justify-content-center">
                               <button onClick={decrement}> ➖ </button>
-                              <h1 className="h3">{count}</h1>
+                              <h1 className="h4">{count}</h1>
                               <button onClick={increment}> ➕ </button>
                               </div>
                     </div>

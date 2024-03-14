@@ -1,8 +1,11 @@
+
 import ItemCount from "../ItemCount/ItemCount";
+
 
 
 const ItemDetail = ({name, img, category, price, description, stock}) => {
           return (
+                    
                     
           <section className="container">
                     <article className="row text-center">
@@ -12,15 +15,19 @@ const ItemDetail = ({name, img, category, price, description, stock}) => {
                               <h1 className="card-title mt-3 mb-3">{name}</h1>
                               <p className="card-text mt-3 mb-3 p-2">Categoría: {category}</p>
                               <p className="card-text mt-3 mb-3 p-2">Descripción: {description} </p>
-                              <h1 className="h2 mb-3">Precio: ${price}</h1>   
-                              <ItemCount stock = {stock} />                  
+                              <h1 className="h2 mb-3">Precio: $ {price}</h1>   
+                              <ItemCount stock = {stock}  />                                 
+                              </div> 
                               </div>
-                              </div>
+                              
                     </article>
+                    
+          
           
           </section>
           )
 }
 
 export default ItemDetail;
+
 
