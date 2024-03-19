@@ -1,5 +1,6 @@
 
 import ItemCount from "../ItemCount/ItemCount";
+import './ItemDetail.css'
 
 
 
@@ -8,7 +9,7 @@ const ItemDetail = ({name, img, category, price, description, stock}) => {
                     
                     
           <section className="container">
-                    <article className="row text-center">
+                    <article className="row text-center font">
                               <div className="card m-3">
                               <img src={img} className="card-img-top mx-auto rounded mt-3" style={{width: 300 }} />
                               <div className="card-body">
