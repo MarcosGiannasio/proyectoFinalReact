@@ -7,6 +7,9 @@ import { useParams } from "react-router-dom";
 const ItemDetailContainer = () => {
 
           const [ product, setProduct] = useState(null);
+
+          const [loading, setLoading] = useState(true);
+
           const {productId} = useParams()
 
           useEffect (()=> {
@@ -17,11 +20,17 @@ const ItemDetailContainer = () => {
                     .catch (error =>  {
                               console.log(error)
                     })
+                    .finally (()=>{
+                              setLoading(false)
+                    })
           }, [productId])
 
           return (
                     <div>
-                              <ItemDetail {...product} />
+                             { loading ? 
+                    <div class="text-center">
+                    <div class="spinner-border mt-5 " role="status"></div>
+                    </div> : <ItemDetail {...product} />}
                     </div>
           )
 }

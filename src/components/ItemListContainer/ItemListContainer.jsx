@@ -7,10 +7,12 @@ import './ItemListContainer.css'
 
 const ItemListContainer = ({greetings}) => {
           const [products, setProducts] = useState([])
+          const [loading, setLoading] = useState(true)
           const {categoryId} = useParams()
 
 
           useEffect (() => {
+                    setLoading(true)
                     const asynFunctions = categoryId ? getProductsByCategory : getProducts
                     asynFunctions(categoryId)
                     .then (res => {
@@ -19,7 +21,16 @@ const ItemListContainer = ({greetings}) => {
                     .catch( error => {
                               console.log(error)
                     })
+                    .finally(() => {
+                              setLoading(false)
+                    })
           }, [categoryId])
+
+          if (loading) {
+                    return <div class="text-center">
+                    <div class="spinner-border mt-5 " role="status"></div>
+                    </div>
+          }
 
           return (
                     <div>
