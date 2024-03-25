@@ -1,10 +1,23 @@
-
+/* import { useContext } from "react"; */
 import ItemCount from "../ItemCount/ItemCount";
 import './ItemDetail.css'
+/* import { CartContext } from "../../App";*/
+import { Link } from "react-router-dom";
+import { useCart } from "../../context/cartContext";
 
 
 
-const ItemDetail = ({name, img, category, price, description, stock}) => {
+const ItemDetail = ({id, name, img, category, price, description, stock}) => {
+
+          const {addItem, isInCart} = useCart()
+
+          const handleAdd = (count)  => {
+                    console.log("Agregar al carrito");
+                    const productObj = {
+                              id, name, price, quantity: count
+                    } 
+          addItem(productObj)
+          };
           return (
                     
                     
@@ -17,7 +30,13 @@ const ItemDetail = ({name, img, category, price, description, stock}) => {
                               <p className="card-text mt-3 mb-3 p-2">Categoría: {category}</p>
                               <p className="card-text mt-3 mb-3 p-2">Descripción: {description} </p>
                               <h1 className="h2 mb-3">Precio: $ {price}</h1>   
-                              <ItemCount stock = {stock}  />                                 
+                              <footer>
+                                        {isInCart(id) ? (
+                                        <Link to= "/cart">Ir al Carrito</Link>
+                                        ): (
+                                                  <ItemCount onAdd={handleAdd} stock={stock}/>
+                                        )}
+                              </footer>
                               </div> 
                               </div>
                               
