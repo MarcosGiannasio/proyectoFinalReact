@@ -24,7 +24,7 @@ return (
           </li>
           </ul>
           </div>
-          <div className="mx-3"><CartWidget/></div>
+          <Link to="/cart" className=" text-decoration-none mx-3"><CartWidget/> </Link>
 </nav>
 );
 }
