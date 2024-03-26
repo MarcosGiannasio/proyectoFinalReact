@@ -67,7 +67,6 @@ const checkout = () => {
                     Swal.fire({
                               icon: "error",
                               text: "Hay productos que estan fuera de stock",
-                              footer: '<a href="#">Why do I have this issue?</a>'
                             });          }
 }        catch(error) { 
           console.log(error)
