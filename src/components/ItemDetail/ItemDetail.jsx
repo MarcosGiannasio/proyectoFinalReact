@@ -20,7 +20,7 @@ const ItemDetail = ({id, name, img, category, price, description, stock}) => {
                     icon: "success",
                     title: `Agregaste: ${count} ${name}`,
                     showConfirmButton: false,
-                    timer: 3000,
+                    timer: 1500,
                     width:300,
                     height: 200,
           

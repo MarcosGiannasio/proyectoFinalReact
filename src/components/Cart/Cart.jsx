@@ -14,20 +14,25 @@ const Cart = () => {
                     </div>
           }
           return (
-                    <div>
-                              <h1>CART</h1>
+                    <div className="mx-4 mt-4">
+                              <h1 className="font h2 mb-5">Detalle de tu compra...</h1>
                               {
                                         cart.map((item) => (
                                         <CartItem key={item.id} {...item}/>
                                         ))}
                     
-                              <h3>Total: $ {total}</h3>
-                              <div>
-                              <button onClick={()=> clearCart()}>Limpiar Carrito</button>
+                    
+                              <section className="text-center mb-5">
+                              <h4 className="mt-4">Total: $ {total}</h4>
+                              <div className="mb-1">
+                              <button className="mt-4 btn btn-terciary h5" onClick={()=> clearCart()}>Limpiar Carrito</button>
                               </div>
-                              <Link to="/checkout">Finalizar Compra</Link>
-                              
-                    </div>
+                              <Link  className="btn btn-secondary" to="/checkout">Finalizar Compra</Link>
+                              </section>
+                              <Link to ="/"className="btn btn-terciary"><strong>👉 seguir comprando</strong></Link>
+                    </div>  
+                        
+                    
           );
 }
 

@@ -7,7 +7,7 @@ const CartItem = ({id, name, quantity, price }) => {
                     removeItem(id);
           };
           return (
-                    <article>
+                    <article className="row text-center">
                               <header>
                                         <h2>{name}</h2>
                               </header>
@@ -17,9 +17,12 @@ const CartItem = ({id, name, quantity, price }) => {
                               </section>
                               <footer>
                                         <p>Subtotal: $ {price * quantity}</p>
-                                        <button onClick={() => handleRemove(id)}>✖️</button>
+                                        <button className="btn btn-terciary" onClick={() => handleRemove(id)}><i class="bi bi-trash"></i></button>
+                                        <hr />
                               </footer>
+                              
                     </article>
+                  
                     );
 }
 
