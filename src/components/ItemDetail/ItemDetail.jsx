@@ -1,7 +1,5 @@
-/* import { useContext } from "react"; */
 import ItemCount from "../ItemCount/ItemCount";
 import './ItemDetail.css'
-/* import { CartContext } from "../../App";*/
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/cartContext";
 
@@ -9,7 +7,7 @@ import { useCart } from "../../context/cartContext";
 
 const ItemDetail = ({id, name, img, category, price, description, stock}) => {
 
-          const {addItem, isInCart} = useCart()
+          const {addItem, isInCart} = useCart();
 
           const handleAdd = (count)  => {
                     console.log("Agregar al carrito");
@@ -17,7 +15,17 @@ const ItemDetail = ({id, name, img, category, price, description, stock}) => {
                               id, name, price, quantity: count
                     } 
           addItem(productObj)
-          };
+          Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `Agregaste: ${count} ${name}`,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    width:300,
+                    height: 200,
+          
+                  });
+};
           return (
                     
                     

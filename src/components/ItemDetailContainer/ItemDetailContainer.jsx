@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { getProductById } from "../../asyncMock";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+import { QueryDocumentSnapshot, doc, getDoc} from "firebase/firestore";
+import { db } from "../../services/firebase";
 
 
 const ItemDetailContainer = () => {
@@ -10,19 +11,20 @@ const ItemDetailContainer = () => {
 
           const [loading, setLoading] = useState(true);
 
-          const {productId} = useParams()
+          const {productId} = useParams();
 
           useEffect (()=> {
-                    getProductById(productId)
-                    .then( res  =>  {
-                              setProduct(res)
-                    })
-                    .catch (error =>  {
-                              console.log(error)
-                    })
-                    .finally (()=>{
-                              setLoading(false)
-                    })
+                    getDoc(doc(db, "products", productId))
+                    .then((querySnapshot) => {
+                    const product = {id: querySnapshot.id, ...querySnapshot.data()}
+                    setProduct(product)
+                   })
+                   .catch((err) =>{
+                    console.error(err)
+                   })
+                   .finally(() => {
+                    setLoading(false)
+                   })
           }, [productId])
 
           return (
@@ -30,6 +32,7 @@ const ItemDetailContainer = () => {
                              { loading ? 
                     <div class="text-center">
                     <div class="spinner-border mt-5 " role="status"></div>
+                    <div>cargando detalle...</div>
                     </div> : <ItemDetail {...product} />}
                     </div>
           )

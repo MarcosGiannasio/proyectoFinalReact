@@ -19,7 +19,7 @@ function App() {
           <Route path ="/cart"  element={<h1>Elementos en el carrito</h1>}/>
         </Routes>
         </CartProvider>
-        </BrowserRouter>
+</BrowserRouter>
     </>
   )
 }
