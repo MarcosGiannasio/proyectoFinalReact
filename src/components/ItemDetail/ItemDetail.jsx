@@ -17,12 +17,12 @@ const ItemDetail = ({id, name, img, category, price, description, stock}) => {
           addItem(productObj)
           Swal.fire({
                     position: "top-end",
-                    icon: "success",
                     title: `Agregaste: ${count} ${name}`,
                     showConfirmButton: false,
                     timer: 1500,
-                    width:300,
-                    height: 200,
+                    width:250,
+                    height: 150,
+                    
           
                   });
 };
