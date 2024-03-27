@@ -1,0 +1,34 @@
+import './Footer.css';
+
+
+const Footer = () => {
+          return (
+
+
+<footer className="footer d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div className="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+      </a>
+      <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
+    </div> 
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a class="text-body-secondary" href="https://www.twitter.com"><i class="bi bi-twitter"></i><svg class="bi" width="24" height="24"><use xlink:href="#Twitter"></use></svg></a></li>
+      <li class="ms-3"><a class="text-body-secondary" href="https://www.whatsapp.com/"><i class="bi bi-whatsapp"></i><svg class="bi" width="24" height="24"><use xlink:href="#Whatsapp"></use></svg></a></li>
+      <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/"><i class="bi bi-instagram"></i><svg class="bi" width="24" height="24"><use xlink:href="#Instagram"></use></svg></a></li>
+    </ul> 
+    </footer>
+
+
+
+
+
+
+          )
+
+
+
+
+
+                 
+}
+export default Footer;
