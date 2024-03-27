@@ -7,9 +7,9 @@ const Item = ({id, name, img, category, price}) => {
 
 <article className="col-3">
   <div class=" text-center p-4">
-    <div class="card">
+    <div class="card" >
       <div class="card-body font">
-          <img  className="rounded" src={img} style={{width: 200}}/>
+          <img  className="rounded" src={img} style={{width:200}}/>
         <h1 class="card-title mt-4 h2">{name}</h1>
         <p>categoría: {category}</p>
         <h2 class="h4">${price}</h2>

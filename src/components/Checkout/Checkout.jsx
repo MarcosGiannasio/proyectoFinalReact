@@ -96,13 +96,14 @@ const checkout = () => {
 
 
           return (
-                    <>
-                    <h1>checkout</h1>
-                    
-                    <div>Confirmación del pedido</div>
-
-                    <button onClick={createOrder}>generar Orden</button>
-                    </>
+                    <section>                   
+                    <div className="font h3 mt-5 mx-4 mb-5">Confirmación del pedido</div>
+                    <div className="text-center">
+                    <button className="mt-5mx-4 btn btn-secondary" 
+                      onClick={createOrder}>Generar orden
+                    </button>
+                    </div>
+                    </section>
           )
           }
 
